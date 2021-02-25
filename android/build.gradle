@@ -30,8 +30,18 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+
+    buildTypes {
+        release {}
+        debug {}
+        profile {}
+    }
+
     dependencies {
         releaseImplementation project(':flipper-no-op')
+        profileImplementation 'com.facebook.flipper:flipper:0.61.0'
+        profileImplementation 'com.facebook.flipper:flipper-network-plugin:0.61.0'
+        profileImplementation 'com.facebook.soloader:soloader:0.9.0'
         debugImplementation 'com.facebook.flipper:flipper:0.61.0'
         debugImplementation 'com.facebook.flipper:flipper-network-plugin:0.61.0'
         debugImplementation 'com.facebook.soloader:soloader:0.9.0'
